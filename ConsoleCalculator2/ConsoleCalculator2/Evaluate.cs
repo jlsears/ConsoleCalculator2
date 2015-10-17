@@ -10,6 +10,11 @@ namespace ConsoleCalculator2
     {
         public static int EvaluateThis(string expression)
         {
+            if(expression == "last")
+            {
+                return Stack.lastAnswer;
+            }
+
             // Pass that variable into the method to parse out elements
             BasicTasks basicOperation = new BasicTasks();
             basicOperation.DelineateTerms(expression);

@@ -7,12 +7,13 @@ using System.Threading.Tasks;
 namespace ConsoleCalculator2
 {   // Static because only want to use these methods as utilities (methods need to be static, too)
     public static class Computations
-    {   // No one outside needs access to this
-        private static int Answer;
+    {   
+        public static int Answer;
 
         public static int Addition(int firstNumb, int secNumb)
         {
             Answer = firstNumb + secNumb;
+            Stack.lastAnswer = Answer;
             return Answer;
         }
 

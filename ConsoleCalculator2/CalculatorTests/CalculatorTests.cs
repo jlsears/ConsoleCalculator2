@@ -22,6 +22,23 @@ namespace CalculatorTests
             Evaluate.EvaluateThis("8+");
         }
 
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentException))]
+        public void ThrowsErrorForAnotherIncorrectEvaluationExpression()
+        {
+            Evaluate.EvaluateThis("/8");
+        }
+
+        // Last Commands
+
+        [TestMethod]
+        public void CanRetrieveLastGivenAnswer()
+        {
+            Computations.Answer = 10;
+            Assert.AreEqual(Stack.lastAnswer, 10);
+        }
+
+
         // Parsing Tests
 
         [TestMethod]
