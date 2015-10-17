@@ -5,36 +5,36 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace ConsoleCalculator2
-{
-    public class Computations
-    {
-        public int Answer;
+{   // Static because only want to use these methods as utilities (methods need to be static, too)
+    public static class Computations
+    {   // No one outside needs access to this
+        private static int Answer;
 
-        public int Addition(int firstNumb, int secNumb)
+        public static int Addition(int firstNumb, int secNumb)
         {
             Answer = firstNumb + secNumb;
             return Answer;
         }
 
-        public int Subtraction(int firstNumb, int secNumb)
+        public static int Subtraction(int firstNumb, int secNumb)
         {
             Answer = firstNumb - secNumb;
             return Answer;
         }
 
-        public int Multiplication(int firstNumb, int secNumb)
+        public static int Multiplication(int firstNumb, int secNumb)
         {
             Answer = firstNumb * secNumb;
             return Answer;
         }
 
-        public int Division(int firstNumb, int secNumb)
+        public static int Division(int firstNumb, int secNumb)
         {
             Answer = firstNumb / secNumb;
             return Answer;
         }
 
-        public int Modulo(int firstNumb, int secNumb)
+        public static int Modulo(int firstNumb, int secNumb)
         {
             Answer = firstNumb % secNumb;
             return Answer;

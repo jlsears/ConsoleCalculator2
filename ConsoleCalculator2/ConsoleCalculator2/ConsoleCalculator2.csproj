@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="BasicTasks.cs" />
     <Compile Include="Computations.cs" />
+    <Compile Include="Evaluate.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

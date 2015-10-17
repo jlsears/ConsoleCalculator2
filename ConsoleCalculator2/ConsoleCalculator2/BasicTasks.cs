@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace ConsoleCalculator2
-{
+{   // not static because we're going to instantiate an instance of this in Evaluate
     public class BasicTasks
     {
         public int firstNumb;
@@ -45,5 +45,6 @@ namespace ConsoleCalculator2
             var foundIt = desiredCalc.IndexOfAny(theDelimiters);
             ourDelimeter = desiredCalc[foundIt];
         }
+        
     }
 }

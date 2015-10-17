@@ -10,6 +10,15 @@ namespace ConsoleCalculator2
     {
         static void Main(string[] args)
         {
+            int counter = 0;
+            string prompt = "[" + counter + "]" + "> ";
+            int firstNumb;
+            int secNumb;
+
+            // Take the user's input expression and save it to a variable
+            Console.Write(prompt);
+            string expression = Console.ReadLine();
+            Evaluate.EvaluateThis(expression);
         }
     }
 }

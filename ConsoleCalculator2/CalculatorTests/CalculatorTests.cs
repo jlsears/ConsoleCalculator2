@@ -7,6 +7,16 @@ namespace CalculatorTests
     [TestClass]
     public class CalculatorTests
     {
+        // Evaluation Tests
+
+        [TestMethod]
+        public void CanReachCorrectAnswersFromInitialInputExpression()
+        {
+            Assert.AreEqual(Evaluate.EvaluateThis("8+2"), 10);            
+        }
+
+        // Parsing Tests
+
         [TestMethod]
         public void CanParseTermsFromGOOD2TermExpression()
         {
@@ -30,42 +40,31 @@ namespace CalculatorTests
         [TestMethod]
         public void CanAddSuccessfully()
         {
-            Computations mathy = new Computations();
-            mathy.Addition(8,2);
-            Assert.AreEqual(mathy.Answer, 10);
+            Assert.AreEqual(Computations.Addition(8,2), 10);
         }
 
         [TestMethod]
         public void CanSubtractSuccessfully()
         {
-            Computations mathy = new Computations();
-            mathy.Subtraction(8, 2);
-            Assert.AreEqual(mathy.Answer, 6);
+            Assert.AreEqual(Computations.Subtraction(8,2), 6);
         }
 
         [TestMethod]
         public void CanMultiplySuccessfully()
         {
-            Computations mathy = new Computations();
-            mathy.Multiplication(5, 3);
-            Assert.AreEqual(mathy.Answer, 15);
+            Assert.AreEqual(Computations.Multiplication(5,3), 15);
         }
 
         [TestMethod]
         public void CanDivideSuccessfully()
         {
-            Computations mathy = new Computations();
-            mathy.Division(18, 3);
-            Assert.AreEqual(mathy.Answer, 6);
+            Assert.AreEqual(Computations.Division(12,2), 6);
         }
 
         [TestMethod]
         public void CanModuloSuccessfully()
         {
-            Computations mathy = new Computations();
-            mathy.Modulo(9, 2);
-            Assert.AreEqual(mathy.Answer, 1);
+            Assert.AreEqual(Computations.Modulo(9,2), 1);
         }
-
     }
 }
