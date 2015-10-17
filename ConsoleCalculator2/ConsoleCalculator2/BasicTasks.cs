@@ -8,10 +8,11 @@ namespace ConsoleCalculator2
 {
     public class BasicTasks
     {
-        public int firstNumb = 0;
-        public int secNumb = 0;
+        public int firstNumb;
+        public int secNumb;
+        public char ourDelimeter;
 
-        public void RetrieveNumbers(string expression)
+        public void DelineateTerms(string expression)
         {
             var theDelimiters = new[] { '+', '-', '*', '/', '%' };
             string desiredCalc = expression;
@@ -39,6 +40,10 @@ namespace ConsoleCalculator2
             // Here are the final numbers we are looking to retrieve
             firstNumb = Convert.ToInt32(firstPart);
             secNumb = Convert.ToInt32(secondPart);
+
+            // Here's where we isolate our delimeter
+            var foundIt = desiredCalc.IndexOfAny(theDelimiters);
+            ourDelimeter = desiredCalc[foundIt];
         }
     }
 }

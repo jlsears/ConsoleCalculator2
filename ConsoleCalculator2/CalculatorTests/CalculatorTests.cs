@@ -11,9 +11,10 @@ namespace CalculatorTests
         public void CanParseTermsFromGOOD2TermExpression()
         {
             BasicTasks doSomething = new BasicTasks();
-            doSomething.RetrieveNumbers("8+2");
+            doSomething.DelineateTerms("8+2");
             Assert.AreEqual(doSomething.firstNumb, 8);
             Assert.AreEqual(doSomething.secNumb, 2);
+            Assert.AreEqual(doSomething.ourDelimeter, '+');
         }
 
         [TestMethod]
@@ -21,8 +22,10 @@ namespace CalculatorTests
         public void ThrowsErrorForIncorrectExpression()
         {
             BasicTasks doSomething = new BasicTasks();
-            doSomething.RetrieveNumbers("8+");
+            doSomething.DelineateTerms("8+");
         }
+
+        // Good Expressions
 
         [TestMethod]
         public void CanAddSuccessfully()
@@ -63,5 +66,6 @@ namespace CalculatorTests
             mathy.Modulo(9, 2);
             Assert.AreEqual(mathy.Answer, 1);
         }
+
     }
 }
