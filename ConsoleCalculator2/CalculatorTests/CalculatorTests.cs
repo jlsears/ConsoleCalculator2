@@ -7,12 +7,19 @@ namespace CalculatorTests
     [TestClass]
     public class CalculatorTests
     {
-        // Evaluation Tests
+        // Evaluate Tests
 
         [TestMethod]
         public void CanReachCorrectAnswersFromInitialInputExpression()
         {
             Assert.AreEqual(Evaluate.EvaluateThis("8+2"), 10);            
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentException))]
+        public void ThrowsErrorForIncorrectEvaluationExpression()
+        {
+            Evaluate.EvaluateThis("8+");
         }
 
         // Parsing Tests
