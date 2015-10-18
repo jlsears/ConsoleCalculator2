@@ -14,8 +14,6 @@ namespace ConsoleCalculator2
         {
             Answer = firstNumb + secNumb;
             Stack.lastAnswer = Answer;
-            //Console.WriteLine("= " + Answer);
-            //Console.ReadKey();
             return Answer;
         }
 

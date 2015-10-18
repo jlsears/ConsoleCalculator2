@@ -10,6 +10,14 @@ namespace ConsoleCalculator2
     {
         public static int lastAnswer { get; set; }
 
-        public static string lastCommand { get; set; }
+        private static string lastCommand = "Whatchoo talkin' 'bout, Willis?";
+        
+
+        public static string LastCommand
+        {
+            get { return lastCommand; }
+
+            set { lastCommand = value; }
+        }
     }
 }
