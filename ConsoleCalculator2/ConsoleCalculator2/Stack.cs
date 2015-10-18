@@ -8,6 +8,8 @@ namespace ConsoleCalculator2
 {
     public class Stack
     {
-        public static int lastAnswer;
+        public static int lastAnswer { get; set; }
+
+        public static string lastCommand { get; set; }
     }
 }

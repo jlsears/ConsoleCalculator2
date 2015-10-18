@@ -14,30 +14,36 @@ namespace ConsoleCalculator2
         {
             Answer = firstNumb + secNumb;
             Stack.lastAnswer = Answer;
+            //Console.WriteLine("= " + Answer);
+            //Console.ReadKey();
             return Answer;
         }
 
         public static int Subtraction(int firstNumb, int secNumb)
         {
             Answer = firstNumb - secNumb;
+            Stack.lastAnswer = Answer;
             return Answer;
         }
 
         public static int Multiplication(int firstNumb, int secNumb)
         {
             Answer = firstNumb * secNumb;
+            Stack.lastAnswer = Answer;
             return Answer;
         }
 
         public static int Division(int firstNumb, int secNumb)
         {
             Answer = firstNumb / secNumb;
+            Stack.lastAnswer = Answer;
             return Answer;
         }
 
         public static int Modulo(int firstNumb, int secNumb)
         {
             Answer = firstNumb % secNumb;
+            Stack.lastAnswer = Answer;
             return Answer;
         }
     }
