@@ -31,25 +31,7 @@ namespace CalculatorTests
 
         // Last Commands
 
-        //[TestMethod]
-        //public void CanRetrieveLastGivenAnswer()
-        //{
-        //    Computations.Answer = 10;
-        //    Assert.AreEqual(Stack.lastAnswer, Computations.Answer);
-        //}
-
-        //[TestMethod]
-        //public void CanRetrieveLastCommand()
-        //{
-        //    BasicTasks recall = new BasicTasks();
-        //    recall.firstNumb = 5;
-        //    recall.secNumb = 2;
-        //    recall.ourDelimeter = '+';
-        //    string checkThis = recall.firstNumb.ToString() + recall.ourDelimeter.ToString() + recall.secNumb.ToString();
-        //    Stack.lastCommand = "5+2";
-        //    Assert.AreEqual(Stack.lastCommand, checkThis);
-        //}
-
+            // Any testing really needed on these as they just function as property updates?
 
         // Parsing Tests
 
@@ -73,11 +55,11 @@ namespace CalculatorTests
 
         // Good Expressions
 
-        //[TestMethod]
-        //public void CanAddSuccessfully()
-        //{
-        //    Assert.AreEqual(Computations.Addition(8,2), 10);
-        //}
+        [TestMethod]
+        public void CanAddSuccessfully()
+        {
+            Assert.AreEqual(Computations.Addition(8, 2), 10);
+        }
 
         [TestMethod]
         public void CanSubtractSuccessfully()

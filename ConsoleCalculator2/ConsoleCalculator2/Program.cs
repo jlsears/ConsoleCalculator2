@@ -44,9 +44,9 @@ namespace ConsoleCalculator2
 
                     // Handling the user entering an expression to be evaluated
                     default:
+                        counter = counter + 1;
                         Evaluate.EvaluateThis(expression);
                         Console.WriteLine("= " + Computations.Answer);
-                        //Console.ReadKey();
                         break;
                 }
                 
