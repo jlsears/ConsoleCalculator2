@@ -10,11 +10,12 @@ namespace ConsoleCalculator2
     {
         public int firstNumb;
         public int secNumb;
-        public char ourDelimeter;
+        public char OurDelimeter;
+        public char ifChar;
 
         public void DelineateTerms(string expression)
         {
-            var theDelimiters = new[] { '+', '-', '*', '/', '%' };
+            var theDelimiters = new[] { '+', '-', '*', '/', '%', '=' }; 
             string desiredCalc = expression;
 
             string[] parsedInfo = desiredCalc.Split(theDelimiters);
@@ -37,13 +38,24 @@ namespace ConsoleCalculator2
 
             }
 
-            // Here are the final numbers we are looking to retrieve
-            firstNumb = Convert.ToInt32(firstPart);
-            secNumb = Convert.ToInt32(secondPart);
-
             // Here's where we isolate our delimeter
             var foundIt = desiredCalc.IndexOfAny(theDelimiters);
-            ourDelimeter = desiredCalc[foundIt];
+            OurDelimeter = desiredCalc[foundIt];
+
+            if (OurDelimeter == '=')
+            {
+                // Here we convert firstPart to char if we'll be setting a constant
+                ifChar = Convert.ToChar(firstPart);
+                secNumb = Convert.ToInt32(secondPart);
+            }
+
+            else
+            {
+                // Here are the final numbers we are looking to retrieve if performing computation
+                firstNumb = Convert.ToInt32(firstPart);
+                secNumb = Convert.ToInt32(secondPart);
+            }
+
         }
         
     }

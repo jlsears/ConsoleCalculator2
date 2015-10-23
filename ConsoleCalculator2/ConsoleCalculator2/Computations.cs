@@ -13,36 +13,44 @@ namespace ConsoleCalculator2
         public static int Addition(int firstNumb, int secNumb)
         {
             Answer = firstNumb + secNumb;
-            Stack.lastAnswer = Answer;
+            Stack.LastAnswer = Answer;
             return Answer;
         }
 
         public static int Subtraction(int firstNumb, int secNumb)
         {
             Answer = firstNumb - secNumb;
-            Stack.lastAnswer = Answer;
+            Stack.LastAnswer = Answer;
             return Answer;
         }
 
         public static int Multiplication(int firstNumb, int secNumb)
         {
             Answer = firstNumb * secNumb;
-            Stack.lastAnswer = Answer;
+            Stack.LastAnswer = Answer;
             return Answer;
         }
 
         public static int Division(int firstNumb, int secNumb)
         {
             Answer = firstNumb / secNumb;
-            Stack.lastAnswer = Answer;
+            Stack.LastAnswer = Answer;
             return Answer;
         }
 
         public static int Modulo(int firstNumb, int secNumb)
         {
             Answer = firstNumb % secNumb;
-            Stack.lastAnswer = Answer;
+            Stack.LastAnswer = Answer;
             return Answer;
         }
+
+        //public static string SettingConstant(int firstNumb, int secNumb)
+        //{
+            
+        //    string makingConstant = firstNumb.ToString();
+        //    const string makingConstant = secNumb.ToString();
+        //    return makingConstant;
+        //}
     }
 }

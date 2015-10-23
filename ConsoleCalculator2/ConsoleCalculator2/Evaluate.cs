@@ -10,31 +10,34 @@ namespace ConsoleCalculator2
     {
         public static int EvaluateThis(string expression)
         {
-            // If statement for "lastq" will go here
+            BasicTasks basicOperation = new BasicTasks();
 
             // Pass that variable into the method to parse out elements
-            BasicTasks basicOperation = new BasicTasks();
-            basicOperation.DelineateTerms(expression);
+            BasicTasks doMath = new BasicTasks();
+            doMath.DelineateTerms(expression);
 
             // Pass those elements here to determine which calculation needs to be perfomed and get the answer
             // And be sure to include corresponding class name with property we're passing along
-            switch (basicOperation.ourDelimeter)
+            switch (doMath.OurDelimeter)
             {
                 case '+':
                     //counter = counter + 1;
-                    return Computations.Addition(basicOperation.firstNumb, basicOperation.secNumb);
+                    return Computations.Addition(doMath.firstNumb, doMath.secNumb);
                 case '-':
                     //counter = counter + 1;
-                    return Computations.Subtraction(basicOperation.firstNumb, basicOperation.secNumb);
+                    return Computations.Subtraction(doMath.firstNumb, doMath.secNumb);
                 case '*':
                     //counter = counter + 1;
-                    return Computations.Multiplication(basicOperation.firstNumb, basicOperation.secNumb);
+                    return Computations.Multiplication(doMath.firstNumb, doMath.secNumb);
                 case '/':
                     //counter = counter + 1;
-                    return Computations.Division(basicOperation.firstNumb, basicOperation.secNumb);
+                    return Computations.Division(doMath.firstNumb, doMath.secNumb);
                 case '%':
                     //counter = counter + 1;
-                    return Computations.Modulo(basicOperation.firstNumb, basicOperation.secNumb);
+                    return Computations.Modulo(doMath.firstNumb, doMath.secNumb);
+                // Need to include case for equal sign to set constant here
+                //case '=':
+                //    return Stack.SettingConstant(basicOperation.ifChar, basicOperation.secNumb);
                 default:
                     throw new ArgumentException();
             }

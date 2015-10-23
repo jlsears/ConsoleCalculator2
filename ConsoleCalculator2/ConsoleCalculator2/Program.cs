@@ -37,7 +37,7 @@ namespace ConsoleCalculator2
 
                     // Handling the user entering "last" command
                     case "last":
-                        Console.WriteLine(Stack.lastAnswer);
+                        Console.WriteLine(Stack.LastAnswer);
                         break;
 
                     // Handling the user entering "lastq" command
@@ -47,6 +47,7 @@ namespace ConsoleCalculator2
 
                     // Handling the user entering an expression to be evaluated
                     default:
+
                         counter = counter + 1;
 
                         // Stashing this away so it's ready if user enters "lastq" command
@@ -56,8 +57,18 @@ namespace ConsoleCalculator2
                             //return; P.S. This nefarious return was what interfered with looping back to prompt again
                         }
 
-                        Evaluate.EvaluateThis(expression);
-                        Console.WriteLine("= " + Computations.Answer);
+                        BasicTasks basicOperation = new BasicTasks();
+                        basicOperation.DelineateTerms(expression);
+
+                        switch (basicOperation.OurDelimeter) 
+                        {
+                            case '=':
+                                return; // Method handling setting constants here
+                            default:
+                                Evaluate.EvaluateThis(expression);
+                                Console.WriteLine("= " + Computations.Answer);
+                                break;
+                        }
                         break;
                 }
                 

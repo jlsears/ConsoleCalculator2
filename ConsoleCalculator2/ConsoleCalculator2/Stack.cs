@@ -8,10 +8,18 @@ namespace ConsoleCalculator2
 {
     public class Stack
     {
-        public static int lastAnswer { get; set; }
+        private static int lastanswer;
+
+        public static int LastAnswer
+
+        {
+            get { return lastanswer; }
+
+            set { lastanswer = value; }
+
+        }
 
         private static string lastCommand = "Whatchoo talkin' 'bout, Willis?";
-        
 
         public static string LastCommand
         {
@@ -19,5 +27,17 @@ namespace ConsoleCalculator2
 
             set { lastCommand = value; }
         }
+
+        Dictionary<char, string> constHolder = new Dictionary<char, string>();
+
+
+        //public static dynamic SettingConstant(char firstNumb, int secNumb)
+        //{
+        //    //string firstStr = firstNumb.ToString();
+        //    string secStr = secNumb.ToString();
+        //    constHolder.Add(firstNumb, secStr);
+        //    return;
+        //}
+
     }
 }
