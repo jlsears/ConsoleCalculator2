@@ -48,18 +48,21 @@ namespace ConsoleCalculator2
                     // Handling the user entering an expression to be evaluated
                     default:
 
+                        // Increment counter with each go round
                         counter = counter + 1;
 
                         // Stashing this away so it's ready if user enters "lastq" command
                         if (expression != "lastq" || expression != "last")
                         {
                             Stack.LastCommand = expression;
-                            //return; P.S. This nefarious return was what interfered with looping back to prompt again
+                            // Remember remember the fifth of... the nefarious gratuitous return
                         }
 
+                        // Going to find our delimeter
                         BasicTasks basicOperation = new BasicTasks();
                         basicOperation.DelineateTerms(expression);
 
+                        // Here we determine whether to send this on for calculation or constant setting
                         switch (basicOperation.OurDelimeter) 
                         {
                             case '=':
