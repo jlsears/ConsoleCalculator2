@@ -89,12 +89,26 @@ namespace CalculatorTests
 
         }
 
-        //[TestMethod]
-        //public void TryingToProveHowDictionaryWillWork()
-        //{
-        //    Dictionary<char, string> myConstants = new Dictionary<char, string>();
-        //    myConstants.Add('x', "5");
-        //    Assert.AreEqual('x', "5");
-        //}
+        // Dictionary Tests
+
+        [TestMethod]
+        public void CanSuccessfullyAddConstantsToDictionary()
+        {
+            Stack testStack = new Stack();
+            testStack.SettingConstant('x', 5);
+            Assert.IsTrue(testStack.ConstHolder.ContainsKey('x'));
+            Assert.IsTrue(testStack.ConstHolder.ContainsValue("5"));
+        }
+
+        [TestMethod]
+        public void CanSuccessfullyRetrieveConstantsFromDictionary()
+        {
+            Stack testStack = new Stack();
+            testStack.SettingConstant('x', 5);
+            char firstNumb = 'x';
+            string expected = "5";
+            string actual = testStack.RetrievingConstant(firstNumb);
+            Assert.AreEqual(expected, actual);
+        }
     }
 }

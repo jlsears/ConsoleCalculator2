@@ -55,7 +55,7 @@ namespace ConsoleCalculator2
                         if (expression != "lastq" || expression != "last")
                         {
                             Stack.LastCommand = expression;
-                            // Remember remember the fifth of... the nefarious gratuitous return
+                            // Remember remember the nefarious gratuitous return error
                         }
 
                         // Going to find our delimeter
@@ -65,14 +65,14 @@ namespace ConsoleCalculator2
                         // Here we determine whether to send this on for calculation or constant setting
                         switch (basicOperation.OurDelimeter) 
                         {
+                            // Will get set as a constant
                             case '=':
-                                // Will get set as a constant
                                 Evaluate.EvaluateThis(expression);
                                 Stack thisStack = new Stack();
                                 thisStack.SettingConstant(basicOperation.ifChar, basicOperation.secNumb);
-                                break; 
+                                break;
+                            // Will get calculated and return an answer
                             default:
-                                // Will get calculated and return an answer
                                 Evaluate.EvaluateThis(expression);
                                 Console.WriteLine("= " + Computations.Answer);
                                 break;

@@ -28,7 +28,7 @@ namespace ConsoleCalculator2
             set { lastCommand = value; }
         }
 
-        // Second argument needs to come in as an integer but get set/returned as a string
+        // Second argument needs to come in as an integer but get set as a string
         public Dictionary<char, string> ConstHolder = new Dictionary<char, string>();
 
         // Making void because we don't really need to return a dictionary
@@ -37,6 +37,22 @@ namespace ConsoleCalculator2
             string secStr = secNumb.ToString();
             ConstHolder.Add(firstNumb, secStr);
             return;
+        }
+
+        public string FoundValue = "";
+        public string NotFound = "Value not found";
+
+        public string RetrievingConstant(char firstNumb)
+        {
+            if (ConstHolder.TryGetValue(firstNumb, out FoundValue))
+            {
+                return FoundValue;
+            }
+            else
+            {
+                Console.WriteLine(NotFound);
+                return NotFound;
+            }
         }
 
     }
