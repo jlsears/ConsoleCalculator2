@@ -28,16 +28,16 @@ namespace ConsoleCalculator2
             set { lastCommand = value; }
         }
 
-        Dictionary<char, string> constHolder = new Dictionary<char, string>();
+        // Second argument needs to come in as an integer but get set/returned as a string
+        public Dictionary<char, string> ConstHolder = new Dictionary<char, string>();
 
-
-        //public static dynamic SettingConstant(char firstNumb, int secNumb)
-        //{
-        //    //string firstStr = firstNumb.ToString();
-        //    string secStr = secNumb.ToString();
-        //    constHolder.Add(firstNumb, secStr);
-        //    return;
-        //}
+        // Making void because we don't really need to return a dictionary
+        public void SettingConstant(char firstNumb, int secNumb)
+        {
+            string secStr = secNumb.ToString();
+            ConstHolder.Add(firstNumb, secStr);
+            return;
+        }
 
     }
 }

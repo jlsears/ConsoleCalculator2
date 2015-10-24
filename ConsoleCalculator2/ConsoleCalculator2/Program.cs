@@ -23,7 +23,7 @@ namespace ConsoleCalculator2
 
                 switch (expression)
                 {
-                    //Hhandling one keyword for exiting application
+                    //Handling one keyword for exiting application
                     case "quit":
                         Console.WriteLine("See ya!");
                         Environment.Exit(1);
@@ -66,8 +66,13 @@ namespace ConsoleCalculator2
                         switch (basicOperation.OurDelimeter) 
                         {
                             case '=':
-                                return; // Method handling setting constants here
+                                // Will get set as a constant
+                                Evaluate.EvaluateThis(expression);
+                                Stack thisStack = new Stack();
+                                thisStack.SettingConstant(basicOperation.ifChar, basicOperation.secNumb);
+                                break; 
                             default:
+                                // Will get calculated and return an answer
                                 Evaluate.EvaluateThis(expression);
                                 Console.WriteLine("= " + Computations.Answer);
                                 break;

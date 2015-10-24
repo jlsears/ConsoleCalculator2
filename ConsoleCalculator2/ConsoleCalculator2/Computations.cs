@@ -44,13 +44,5 @@ namespace ConsoleCalculator2
             Stack.LastAnswer = Answer;
             return Answer;
         }
-
-        //public static string SettingConstant(int firstNumb, int secNumb)
-        //{
-            
-        //    string makingConstant = firstNumb.ToString();
-        //    const string makingConstant = secNumb.ToString();
-        //    return makingConstant;
-        //}
     }
 }
