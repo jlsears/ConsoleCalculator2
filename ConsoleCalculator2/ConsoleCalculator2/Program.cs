@@ -62,14 +62,16 @@ namespace ConsoleCalculator2
                         BasicTasks basicOperation = new BasicTasks();
                         basicOperation.DelineateTerms(expression);
 
+                        Stack MainStack = new Stack();
+
                         // Here we determine whether to send this on for calculation or constant setting
                         switch (basicOperation.OurDelimeter) 
                         {
                             // Will get set as a constant
                             case '=':
                                 //Evaluate.EvaluateThis(expression);
-                                Stack thisStack = new Stack();
-                                thisStack.SettingConstant(basicOperation.ifChar, basicOperation.secNumb);
+                                //Stack MainStack = new Stack();
+                                MainStack.SettingConstant(basicOperation.ifChar, basicOperation.secNumb);
                                 Console.WriteLine("the expression " + expression + "has been added to the dictionary");
                                 break;
                             // Will get calculated and return an answer
