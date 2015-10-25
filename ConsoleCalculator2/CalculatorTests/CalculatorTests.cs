@@ -110,5 +110,13 @@ namespace CalculatorTests
             string actual = testStack.RetrievingConstant(firstNumb);
             Assert.AreEqual(expected, actual);
         }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentException))]
+        public void ThrowsErrorForNotFoundValue()
+        {
+            Stack testStack = new Stack();
+            testStack.RetrievingConstant('y');
+        }
     }
 }

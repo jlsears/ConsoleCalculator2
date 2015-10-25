@@ -67,9 +67,10 @@ namespace ConsoleCalculator2
                         {
                             // Will get set as a constant
                             case '=':
-                                Evaluate.EvaluateThis(expression);
+                                //Evaluate.EvaluateThis(expression);
                                 Stack thisStack = new Stack();
                                 thisStack.SettingConstant(basicOperation.ifChar, basicOperation.secNumb);
+                                Console.WriteLine("the expression " + expression + "has been added to the dictionary");
                                 break;
                             // Will get calculated and return an answer
                             default:
@@ -78,8 +79,7 @@ namespace ConsoleCalculator2
                                 break;
                         }
                         break;
-                }
-                
+                }               
             }
         }
     }
