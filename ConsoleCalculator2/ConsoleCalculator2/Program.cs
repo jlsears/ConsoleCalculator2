@@ -55,7 +55,6 @@ namespace ConsoleCalculator2
                         if (expression != "lastq" || expression != "last")
                         {
                             Stack.LastCommand = expression;
-                            // Remember remember the nefarious gratuitous return error
                         }
 
                         // Going to find our delimeter
@@ -69,10 +68,8 @@ namespace ConsoleCalculator2
                         {
                             // Will get set as a constant
                             case '=':
-                                //Evaluate.EvaluateThis(expression);
-                                //Stack MainStack = new Stack();
                                 MainStack.SettingConstant(basicOperation.ifChar, basicOperation.secNumb);
-                                Console.WriteLine("the expression " + expression + "has been added to the dictionary");
+                                Console.WriteLine("the expression " + expression + " has been added to the dictionary");
                                 break;
                             // Will get calculated and return an answer
                             default:
