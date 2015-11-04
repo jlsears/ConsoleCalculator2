@@ -29,13 +29,14 @@ namespace ConsoleCalculator2
         }
 
         // Second argument needs to come in as an integer but get set as a string
-        public Dictionary<char, string> ConstHolder = new Dictionary<char, string>();
+        public Dictionary<string, string> ConstHolder = new Dictionary<string, string>();
 
         // Making void because we don't really need to return a dictionary when adding key value pair
-        public void SettingConstant(char firstNumb, int secNumb)
+        public void SettingConstant(string firstNumb, int secNumb)
         {
             string secStr = secNumb.ToString();
             ConstHolder.Add(firstNumb, secStr);
+            Console.Write("For real");
             return;
         }
 
@@ -43,7 +44,7 @@ namespace ConsoleCalculator2
         public string NotFound = "Value not found";
 
         // Retrieving value from dictionary
-        public string RetrievingConstant(char firstNumb)
+        public string RetrievingConstant(string firstNumb)
         {
             if (ConstHolder.TryGetValue(firstNumb, out FoundValue))
             {

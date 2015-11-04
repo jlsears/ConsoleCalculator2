@@ -32,7 +32,8 @@ namespace ConsoleCalculator2
         }
 
         public static int Division(int firstNumb, int secNumb)
-        {
+        {   
+            // Unhandled exception to do with dividing by zero?
             Answer = firstNumb / secNumb;
             Stack.LastAnswer = Answer;
             return Answer;
