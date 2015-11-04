@@ -48,7 +48,7 @@ namespace ConsoleCalculator2
                     //Retrieve the constant's value from the dictionary
                     string grabValue = firstPart;
                     Stack secondStack = new Stack();
-                    string gotValue = secondStack.RetrievingConstant(grabValue);
+                    string gotValue = Stack.RetrievingConstant(grabValue);
                     firstNumb = Convert.ToInt32(gotValue);
 
                 } else
@@ -63,7 +63,7 @@ namespace ConsoleCalculator2
                     //Retrieve the constant's value from the dictionary
                     string nextValue = secondPart;
                     Stack secondStack = new Stack();
-                    string foundValue = secondStack.RetrievingConstant(nextValue);
+                    string foundValue = Stack.RetrievingConstant(nextValue);
                 }
                 else
                 {

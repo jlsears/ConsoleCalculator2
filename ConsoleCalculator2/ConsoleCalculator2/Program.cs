@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleCalculator2
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
@@ -61,19 +61,20 @@ namespace ConsoleCalculator2
                         BasicTasks basicOperation = new BasicTasks();
                         basicOperation.DelineateTerms(expression);
 
-                        Stack MainStack = new Stack();
+                        //Stack MainStack = new Stack();
 
                         // Here we determine whether to send this on for calculation or constant setting
                         switch (basicOperation.OurDelimeter) 
                         {
                             // Will get set as a constant
                             case '=':
-                                MainStack.SettingConstant(basicOperation.ifChar, basicOperation.secNumb);
+                                Stack.SettingConstant(basicOperation.ifChar, basicOperation.secNumb);
                                 Console.WriteLine("the expression " + expression + " has been added to the dictionary");
                                 break;
                             // Will get calculated and return an answer
                             default:
                                 Evaluate.EvaluateThis(expression);
+                                //MainStack.RetrievingConstant();
                                 Console.WriteLine("= " + Computations.Answer);
                                 break;
                         }
