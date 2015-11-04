@@ -47,7 +47,7 @@ namespace ConsoleCalculator2
                 {
                     //Retrieve the constant's value from the dictionary
                     string grabValue = firstPart;
-                    Stack secondStack = new Stack();
+                    //Stack secondStack = new Stack();
                     string gotValue = Stack.RetrievingConstant(grabValue);
                     firstNumb = Convert.ToInt32(gotValue);
 
@@ -62,19 +62,15 @@ namespace ConsoleCalculator2
                 {
                     //Retrieve the constant's value from the dictionary
                     string nextValue = secondPart;
-                    Stack secondStack = new Stack();
+                    //Stack secondStack = new Stack();
                     string foundValue = Stack.RetrievingConstant(nextValue);
+                    secNumb = Convert.ToInt32(foundValue);
                 }
                 else
                 {
                     secNumb = Convert.ToInt32(parsedInfo[1]);
                 }
-
-                // Here are the final numbers we are looking to retrieve if performing computation 
-                //firstNumb = Convert.ToInt32(firstPart);
-                //secNumb = Convert.ToInt32(secondPart);
             }
-
         }
     }
 }
