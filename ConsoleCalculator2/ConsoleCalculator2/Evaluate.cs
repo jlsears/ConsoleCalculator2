@@ -14,6 +14,7 @@ namespace ConsoleCalculator2
             BasicTasks doMath = new BasicTasks();
             doMath.DelineateTerms(expression);
 
+
             // Determine if an element is a constant, and insert number value if so
             //if()
 

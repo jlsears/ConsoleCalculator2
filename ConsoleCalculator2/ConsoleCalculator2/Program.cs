@@ -49,7 +49,7 @@ namespace ConsoleCalculator2
                     default:
 
                         // Increment counter with each go round
-                        counter = counter + 1;
+                        // counter = counter + 1;
 
                         // Stashing this away so it's ready if user enters "lastq" command
                         if (expression != "lastq" || expression != "last")
@@ -69,11 +69,15 @@ namespace ConsoleCalculator2
                             // Will get set as a constant
                             case '=':
                                 Stack.SettingConstant(basicOperation.ifChar, basicOperation.secNumb);
-                                Console.WriteLine("the expression " + expression + " has been added to the dictionary");
+                                //Console.WriteLine("the expression " + expression + " has been added to the dictionary");
                                 break;
-                            // Will get calculated and return an answer
+                            
                             default:
                                 Evaluate.EvaluateThis(expression);
+
+                                // Increment counter with each go round
+                                counter = counter + 1;
+
                                 //MainStack.RetrievingConstant();
                                 Console.WriteLine("= " + Computations.Answer);
                                 break;

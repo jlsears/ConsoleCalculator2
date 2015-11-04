@@ -29,6 +29,7 @@ namespace ConsoleCalculator2
         }
 
         // Second argument needs to come in as an integer but get set as a string
+        // Making static so dictionary can be accessed globally
         public static Dictionary<string, string> ConstHolder = new Dictionary<string, string>();
 
         // Making void because we don't really need to return a dictionary when adding key value pair
@@ -54,9 +55,6 @@ namespace ConsoleCalculator2
             {
                 throw new ArgumentException();
             }
-
-
         }
-
     }
 }
