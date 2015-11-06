@@ -41,7 +41,7 @@ namespace ConsoleCalculator2
             return;
         }
 
-        static string FoundValue;
+        public static string FoundValue;
         public string NotFound = "Value not found";
 
         // Retrieving value from dictionary
