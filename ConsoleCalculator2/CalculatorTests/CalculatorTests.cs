@@ -9,24 +9,35 @@ namespace CalculatorTests
     {
         // Evaluate Tests
 
+        private Evaluate evaluations;
+        private Stack stacking;
+
+        [TestInitialize]
+        public void Initialize()
+        {
+            evaluations = new Evaluate();
+            stacking = new Stack();
+
+        }
+
         [TestMethod]
         public void CanReachCorrectAnswersFromInitialInputExpression()
         {
-            Assert.AreEqual(Evaluate.EvaluateThis("8+2"), 10);
+            Assert.AreEqual(evaluations.EvaluateThis("8+2"), 10);
         }
 
         [TestMethod]
         [ExpectedException(typeof(ArgumentException))]
         public void ThrowsErrorForIncorrectEvaluationExpression()
         {
-            Evaluate.EvaluateThis("8+");
+            evaluations.EvaluateThis("8+");
         }
 
         [TestMethod]
         [ExpectedException(typeof(ArgumentException))]
         public void ThrowsErrorForAnotherIncorrectEvaluationExpression()
         {
-            Evaluate.EvaluateThis("/8");
+            evaluations.EvaluateThis("/8");
         }
 
         // Parsing Tests
@@ -94,20 +105,18 @@ namespace CalculatorTests
         [TestMethod]
         public void CanSuccessfullyAddConstantsToDictionary()
         {
-            Stack testStack = new Stack();
-            Stack.SettingConstant("x", 5);
-            Assert.IsTrue(Stack.ConstHolder.ContainsKey("x"));
-            Assert.IsTrue(Stack.ConstHolder.ContainsValue("5"));
+            stacking.SettingConstant("x", 5);
+            Assert.IsTrue(stacking.ConstHolder.ContainsKey("x"));
+            Assert.IsTrue(stacking.ConstHolder.ContainsValue("5"));
         }
 
         [TestMethod]
         public void CanSuccessfullyRetrieveConstantsFromDictionary()
         {
-            Stack testStack = new Stack();
-            Stack.SettingConstant("y", 4);
+            stacking.SettingConstant("y", 4);
             string firstNumb = "y";
             string expected = "4";
-            string actual = Stack.RetrievingConstant(firstNumb);
+            string actual = stacking.RetrievingConstant(firstNumb);
             Assert.AreEqual(expected, actual);
         }
 
@@ -115,8 +124,7 @@ namespace CalculatorTests
         [ExpectedException(typeof(ArgumentException))]
         public void ThrowsErrorForNotFoundValue()
         {
-            Stack testStack = new Stack();
-            Stack.RetrievingConstant("y");
+            stacking.RetrievingConstant("y");
         }
     }
 }

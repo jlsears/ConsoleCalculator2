@@ -30,10 +30,10 @@ namespace ConsoleCalculator2
 
         // Second argument needs to come in as an integer but get set as a string
         // Making static so dictionary can be accessed globally
-        public static Dictionary<string, string> ConstHolder = new Dictionary<string, string>();
+        public Dictionary<string, string> ConstHolder = new Dictionary<string, string>();
 
         // Making void because we don't really need to return a dictionary when adding key value pair
-        public static void SettingConstant(string firstNumb, int secNumb)
+        public void SettingConstant(string firstNumb, int secNumb)
         {
             string secStr = secNumb.ToString();
             ConstHolder.Add(firstNumb, secStr);
@@ -45,7 +45,7 @@ namespace ConsoleCalculator2
         public string NotFound = "Value not found";
 
         // Retrieving value from dictionary
-        public static string RetrievingConstant(string firstNumb)
+        public string RetrievingConstant(string firstNumb)
         {
             if (ConstHolder.TryGetValue(firstNumb, out FoundValue))
             {

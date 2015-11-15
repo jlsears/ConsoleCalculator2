@@ -12,6 +12,8 @@ namespace ConsoleCalculator2
         {
             int counter = 0;
             var propeller = true;
+            BasicTasks basicOperation = new BasicTasks();
+
 
             while (propeller) {
 
@@ -58,8 +60,8 @@ namespace ConsoleCalculator2
                         }
 
                         // Going to find our delimeter
-                        BasicTasks basicOperation = new BasicTasks();
                         basicOperation.DelineateTerms(expression);
+                        Evaluate evaluating = new Evaluate(basicOperation);
 
                         //Stack MainStack = new Stack();
 
@@ -68,12 +70,12 @@ namespace ConsoleCalculator2
                         {
                             // Will get set as a constant
                             case '=':
-                                Stack.SettingConstant(basicOperation.ifChar, basicOperation.secNumb);
+                                basicOperation.calcStack.SettingConstant(basicOperation.ifChar, basicOperation.secNumb);
                                 //Console.WriteLine("the expression " + expression + " has been added to the dictionary");
                                 break;
                             
                             default:
-                                Evaluate.EvaluateThis(expression);
+                                evaluating.EvaluateThis(expression);
 
                                 // Increment counter with each go round
                                 counter = counter + 1;

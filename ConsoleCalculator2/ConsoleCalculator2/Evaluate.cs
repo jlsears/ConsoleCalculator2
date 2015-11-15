@@ -6,12 +6,23 @@ using System.Threading.Tasks;
 
 namespace ConsoleCalculator2
 {
-    public static class Evaluate
+    public class Evaluate
     {
-        public static int EvaluateThis(string expression)
+        public BasicTasks doMath { get; set; }
+
+        public Evaluate()
+        {
+            doMath = new BasicTasks();
+        }
+
+        public Evaluate(BasicTasks _task)
+        {
+            doMath = _task;
+        }
+
+        public int EvaluateThis(string expression)
         {
             // Isolate delimeter and numbers for calculation
-            BasicTasks doMath = new BasicTasks();
             doMath.DelineateTerms(expression);
 
 
