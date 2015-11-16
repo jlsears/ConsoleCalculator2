@@ -37,7 +37,7 @@ namespace ConsoleCalculator2
         {
             string secStr = secNumb.ToString();
             ConstHolder.Add(firstNumb, secStr);
-            Console.Write("For real");
+            //Console.Write("For real");
             return;
         }
 

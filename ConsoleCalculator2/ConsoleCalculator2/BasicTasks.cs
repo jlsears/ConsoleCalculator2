@@ -13,7 +13,7 @@ namespace ConsoleCalculator2
         public char OurDelimeter;
         public string ifChar;
         public Stack calcStack { get; set; }
-
+    
         public BasicTasks()
         {
             calcStack = new Stack();
@@ -54,7 +54,6 @@ namespace ConsoleCalculator2
                 {
                     //Retrieve the constant's value from the dictionary
                     string grabValue = firstPart;
-                    //Stack secondStack = new Stack();
                     string gotValue = calcStack.RetrievingConstant(grabValue);
                     firstNumb = Convert.ToInt32(gotValue);
 
@@ -69,7 +68,6 @@ namespace ConsoleCalculator2
                 {
                     //Retrieve the constant's value from the dictionary
                     string nextValue = secondPart;
-                    //Stack secondStack = new Stack();
                     string foundValue = calcStack.RetrievingConstant(nextValue);
                     secNumb = Convert.ToInt32(foundValue);
                 }

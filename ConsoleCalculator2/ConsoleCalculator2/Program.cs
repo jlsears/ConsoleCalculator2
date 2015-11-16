@@ -79,8 +79,6 @@ namespace ConsoleCalculator2
 
                                 // Increment counter with each go round
                                 counter = counter + 1;
-
-                                //MainStack.RetrievingConstant();
                                 Console.WriteLine("= " + Computations.Answer);
                                 break;
                         }
